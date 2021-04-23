@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: simple js action
+        id: greet
         uses: actions/github-actions-hello@v1 
         with: 
           who-to-greet: 'Abhishek Pareek'
+      - name:  Log greeting time
+        run: echo "${{steps.greet.outputs.time"}}"
