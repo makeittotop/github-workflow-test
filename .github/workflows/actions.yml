@@ -3,7 +3,7 @@ name: javascript action wf
 on: [push]
 
 jobs:
-  run-github actions:
+  run-simple-javascript-action:
     runs-on: ubuntu-latest
     steps:
       - name: simple js action
