@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: simple js action
         id: greet
-        uses: actions/github-actions-hello@v1 
+        uses: actions/hello-world-javascript-action@v1.1
         with: 
           who-to-greet: 'Abhishek Pareek'
       - name:  Log greeting time
