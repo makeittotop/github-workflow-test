@@ -34,5 +34,7 @@ jobs:
       - name: dir. bash
         run: pwd
         shell: bash
-
-      
+      - name: ls powershell
+        run: Get-ChildItem
+      - name: ls bash
+        run: ls -ltha $PWD
