@@ -6,13 +6,16 @@ jobs:
   run-shell-command:
     runs-on: ubuntu-18.04
     steps:
-      - name: echo 
-        run: echo "$PATH"
-      - name: multiline script
+      - name: download terraform
         run: |2
-          pip --version
-          python --version
-          npm -v
-          node -v
-      - name: eccho
-        run: eccho "foo"
+          curl -o terraform.zip https://releases.hashicorp.com/terraform/0.15.0/terraform_0.15.0_linux_amd64.zip
+          unzip terraform.zip
+          chmod +x terraform
+          mv terraform /usr/local/bin/
+          rm terraform.zip
+          terraform version
+      - name: run terraform init
+        run: |2
+          mkdir ~/terraform-project
+          cd ~/terraform-project
+          terraform init
