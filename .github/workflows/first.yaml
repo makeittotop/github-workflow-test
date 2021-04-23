@@ -9,7 +9,7 @@ jobs:
       - name: echo 
         run: echo "$PATH"
       - name: multiline script
-        run: 2|
+        run: |2
           pip --version
           python --version
           npm -v
