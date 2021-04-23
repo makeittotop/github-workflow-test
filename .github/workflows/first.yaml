@@ -1,0 +1,16 @@
+name: Shell commands
+
+on: [push]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: echo 
+        run: echo "$PATH"
+      - name: multiline script
+        run: 2|
+          pip --version
+          python --version
+          npm -v
+          node -v
