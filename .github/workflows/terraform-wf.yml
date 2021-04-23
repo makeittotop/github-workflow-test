@@ -9,7 +9,7 @@ on:
       - "opened"
       - "reopened"
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "0/5 * * * *"
 
 jobs:
   terraform-wf:
