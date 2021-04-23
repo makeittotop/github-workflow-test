@@ -1,6 +1,6 @@
 name: Terraform WF
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   terraform-wf:
