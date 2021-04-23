@@ -1,0 +1,30 @@
+name: Terraform WF
+
+on: [push]
+
+jobs:
+  terraform wf:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: download terraform
+        run: |2
+          curl -o terraform.zip https://releases.hashicorp.com/terraform/0.15.0/terraform_0.15.0_linux_amd64.zip
+          unzip terraform.zip
+          chmod +x terraform
+          sudo mv  terraform /usr/local/bin/
+          rm terraform.zip
+          terraform version
+      - name: CWD
+        run: |2
+          pwd
+          ls -ltha $PWD
+      - name: checkout repo.
+        uses: actions/checkout@v2
+      - name: CWD
+        run: |2
+          pwd
+          ls -ltha $PWD
+      - name: run terraform init and validate
+        run: |2
+          terraform init
+          terraform validate
