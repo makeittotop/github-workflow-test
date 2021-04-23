@@ -8,4 +8,5 @@ jobs:
     steps:
       - name: simple js action
         uses: actions/github-actions-hello@v1 
-        with: who-to-greet: 'Abhishek Pareek'
+        with: 
+          who-to-greet: 'Abhishek Pareek'
