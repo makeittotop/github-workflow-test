@@ -3,7 +3,7 @@ name: Terraform WF
 on: [push]
 
 jobs:
-  terraform wf:
+  terraform-wf:
     runs-on: ubuntu-18.04
     steps:
       - name: download terraform
