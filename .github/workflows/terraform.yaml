@@ -3,7 +3,7 @@ name: Shell commands
 on: [push]
 
 jobs:
-  run-shell-command:
+  terraform:
     runs-on: ubuntu-18.04
     steps:
       - name: download terraform
@@ -14,8 +14,10 @@ jobs:
           sudo mv  terraform /usr/local/bin/
           rm terraform.zip
           terraform version
+      - name: CWD
+        run: |2
+          echo $PWD
+          ls -ltha
       - name: run terraform init
         run: |2
-          mkdir ~/terraform-project
-          cd ~/terraform-project
           terraform init
