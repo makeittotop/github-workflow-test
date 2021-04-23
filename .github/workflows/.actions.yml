@@ -1,0 +1,25 @@
+name: javascript action wf
+
+on: [push]
+
+jobs:
+  run-simple-javascript-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pwd and ls
+        run: |2
+          pwd
+          ls
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: pwd and ls after checkout
+        run: |2
+          pwd
+          ls
+      - name: simple js action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1.1
+        with:
+          who-to-greet: 'Abhishek Pareek'
+      - name:  Log greeting time
+        run: echo "${{steps.greet.outputs.time}} "
