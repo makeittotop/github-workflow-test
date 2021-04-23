@@ -12,7 +12,7 @@ jobs:
           ls
       - name: checkout
         uses: actions/checkout@v2
-      - name: pwd and ls
+      - name: pwd and ls after checkout
         run: |2
           pwd
           ls
