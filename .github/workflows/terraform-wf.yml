@@ -6,7 +6,7 @@ jobs:
   terraform-wf:
     runs-on: ubuntu-18.04
     steps:
-      - name: print env. var
+      - name: print env. vars
         run: env
       - name: download terraform
         run: |2
