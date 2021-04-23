@@ -38,3 +38,4 @@ jobs:
         run: Get-ChildItem
       - name: ls bash
         run: ls -ltha $PWD
+        shell: bash
