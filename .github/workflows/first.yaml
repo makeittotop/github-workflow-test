@@ -11,7 +11,7 @@ jobs:
           curl -o terraform.zip https://releases.hashicorp.com/terraform/0.15.0/terraform_0.15.0_linux_amd64.zip
           unzip terraform.zip
           chmod +x terraform
-          mv terraform /usr/local/bin/
+          sudo mv  terraform /usr/local/bin/
           rm terraform.zip
           terraform version
       - name: run terraform init
