@@ -28,6 +28,7 @@ jobs:
         shell: python
   run-windows-commands:
     runs-on: windows-latest
+    needs: [terraform]
     steps:
       - name: dir. powershell
         run: Get-Location
