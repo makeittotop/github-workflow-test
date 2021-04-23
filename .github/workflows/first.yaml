@@ -14,3 +14,5 @@ jobs:
           python --version
           npm -v
           node -v
+      - name: eccho
+        run: eccho "foo"
