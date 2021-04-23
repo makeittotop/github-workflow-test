@@ -21,3 +21,10 @@ jobs:
       - name: run terraform init
         run: |2
           terraform init
+      - name: python command
+        run: |2
+          import platform
+          print(platform.processor())
+        shell: python
+
+      
