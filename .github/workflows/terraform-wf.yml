@@ -43,6 +43,8 @@ jobs:
         run: |2
           pwd
           ls -ltha $PWD
+      - name: Branch name
+        run: echo running on branch ${GITHUB_REF##*/}
       - name: run terraform init and validate
         run: |2
           terraform init
