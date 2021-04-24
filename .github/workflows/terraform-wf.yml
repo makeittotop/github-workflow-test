@@ -17,6 +17,10 @@ jobs:
   terraform-wf:
     runs-on: ubuntu-18.04
     steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
       - name: payload data
         run:  echo ${{ github.event.client_payload.env }}
       - name: print env. vars
