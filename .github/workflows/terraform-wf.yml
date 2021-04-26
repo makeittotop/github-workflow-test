@@ -104,3 +104,16 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJSON(matrix) }}
         run: echo "$MATRIX_CONTEXT"
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    needs:
+      - one
+    container:
+      image: azul/zulu-openjdk-alpine:8-jre
+    steps:  
+    - uses: actions/checkout@v2
+    - name: What OS is running
+      run: uname -a
+    - name: What java version do we have
+      run: java -version
