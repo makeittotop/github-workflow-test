@@ -12,11 +12,15 @@ on:
     - cron: "0/5 * * * *"
   repository_dispatch:
     types: [build]
+env:
+  SECRET_KEY: FOOBAR
 
 jobs:
   terraform-wf:
     runs-on: ubuntu-18.04
     steps:
+      - name:
+        run: echo "SECRET_KEY: ${SECRET_KEY}"
       - name: payload data
         run:  echo ${{ github.event.client_payload.env }}
       - name: print env. vars
