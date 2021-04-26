@@ -17,6 +17,8 @@ env:
 
 jobs:
   terraform-wf:
+    needs: 
+      - create_commit
     runs-on: ubuntu-18.04
     steps:
       - name:
