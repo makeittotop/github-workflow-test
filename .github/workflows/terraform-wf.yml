@@ -54,8 +54,6 @@ jobs:
         run: |2
           terraform init
           terraform validate
-
-jobs:
   create_commit:
     runs-on: ubuntu-latest
     permissions:
