@@ -110,13 +110,18 @@ jobs:
     needs:
       - one
     container:
-      image: azul/zulu-openjdk-alpine:8-jre
+      image: makeittotop/terraform_opa:latest
     steps:
     - uses: actions/checkout@v2
-    - name: What OS is running
-      run: uname -a
-    - name: What java version do we have
-      run: java -version
-    - name: pwd
-      run: |2
-        ls -lth
+    - name: terrafrom version
+      run: terraform version
+    - name: opa version
+      run: opa version
+    - name: terrafrom fmt
+      run: terraform fmt -check
+    - name: terrafrom init
+      run: terraform init
+    - name: terraform validate
+      run: terraform validate
+    - name: terrafrom plan
+      run: terraform plan
